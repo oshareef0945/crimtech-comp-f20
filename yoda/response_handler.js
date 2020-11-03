@@ -2,6 +2,9 @@
 let names = ['cute', 'regular'];
 let moods = ['dark', 'force', 'std'];
 
+const chat_textbox = document.getElementById("chat_response");
+chat_textbox
+
 let dark_quotes = ["Once you start down the dark path, forever will it dominate your destiny, consume you it will.",
 "In a dark place we find ourselves, and a little more knowledge lights our way.",
 "Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering.",
@@ -19,7 +22,42 @@ let std_quotes = ["Patience you must have, my young padawan.",
 "Difficult to see. Always in motion is the future."
 ];
 
+
 function respond() {
     // Your Code Here
-    console.log("Hello World!");
+    var chat_response = document.getElementById("chat_response").value;
+    img_name = "";
+    img_mood = "";
+    yoda_text = "";
+    
+    if (chat_response.includes("force")) {
+        if (chat_response.includes("dark")) {
+            img_mood = "dark";
+            yoda_text = dark_quotes[Math.floor(Math.random() * dark_quotes.length)]
+        }
+        else {
+            img_mood = "force"
+            yoda_text = force_quotes[Math.floor(Math.random() * force_quotes.length)]
+        }
+    } else {
+        img_mood = "std"
+        yoda_text = std_quotes[Math.floor(Math.random() * std_quotes.length)]
+    }
+    
+    
+    if (chat_response.includes("cute") || chat_response.includes("baby")) {
+        img_name = "cute";
+        if (chat_response.includes("dark"))
+        mood_index = Math.floor(Math.random() * 3);
+        yoda_text = "Yes, h" + "m".repeat(Math.floor((Math.random()+1)*10)) + "."
+        
+    }
+    else {
+        img_name = "regular"
+    }
+    
+    img = img_name + '-' + img_mood + '.jpg';
+    document.getElementById("yoda_img").setAttribute("src", "img/" + img);
+    document.getElementById("yoda_response").innerHTML = yoda_text;
+    document.getElementById("chat_response").value = '';
 }

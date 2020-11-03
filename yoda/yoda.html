@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <title>Yoda Chat Lab</title>
+        <link rel='shortcut icon' type='image/png' href='img/favicon.ico'>
+        <script src="response_handler.js"></script>
     </head>
     <body>
+      <center>
+        <img src="img/regular-std.jpg" id="yoda_img" width="1200" height="600">
+        <p id="yoda_response" style="text-align: center">To yoda chat I welcome you. Yes, hmmmmm.</p>
+        <form action="#" onsubmit="return respond()">
+            <input type="text" id="chat_response" size="100"><br>
+            <button type="button" id="submit_btn" onclick="respond()" size ="20" style="margin-top: 10px">Response</button>
+        </form>
+      </center>
 
     </body>
 </html>
