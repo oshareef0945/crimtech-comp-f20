@@ -28,6 +28,19 @@
   color: #61dafb;
 }
 
+.PanelContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    flex-grow: 0.5;
+}
+
+.Panel {
+  font-size: 40px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
